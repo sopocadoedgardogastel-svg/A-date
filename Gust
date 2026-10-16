@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>For Gustav ❤️</title>
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:linear-gradient(135deg,#ffd6e8,#ffeecf);
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    overflow:hidden;
+}
+
+.card{
+    background:white;
+    padding:40px;
+    border-radius:25px;
+    box-shadow:0 10px 30px rgba(0,0,0,0.15);
+    max-width:600px;
+    width:90%;
+}
+
+h1{
+    color:#ff4f81;
+}
+
+button{
+    padding:12px 25px;
+    font-size:18px;
+    margin:10px;
+    border:none;
+    border-radius:20px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.yes{
+    background:#ff4f81;
+    color:white;
+}
+
+.yes:hover{
+    transform:scale(1.1);
+}
+
+.no{
+    background:#ccc;
+    position:relative;
+}
+
+img{
+    width:180px;
+    border-radius:15px;
+    margin-top:15px;
+}
+
+.sticker{
+    font-size:90px;
+    animation:bounce 1s infinite;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+
+<div class="card" id="page1">
+
+<h1>❤️ Hey Skat Gustav! ❤️</h1>
+
+<p>
+Would you like to be my date tomorrow night? 🌙✨
+</p>
+
+<button class="yes" onclick="showChocolate()">
+YES 😍
+</button>
+
+<button class="no" id="noBtn1">
+NO 😅
+</button>
+
+</div>
+
+<!-- PAGE 2 -->
+
+<div class="card" id="page2" style="display:none;">
+
+<h1>🍫 Chocolate Time 🍫</h1>
+
+<p>
+Would you like some chocolate too?
+</p>
+
+<button class="yes" onclick="showFlowers()">
+YES 🍫
+</button>
+
+<button class="no" id="noBtn2">
+NO 🙈
+</button>
+
+</div>
+
+<!-- PAGE 3 -->
+
+<div class="card" id="page3" style="display:none;">
+
+<h1>🌹 Flowers 🌹</h1>
+
+<p>
+Which flowers would you like?
+</p>
+
+<img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?w=500
+
+<button class="yes" onclick="showPlace()">
+🌹 Roses
+</button>
+
+<button class="yes" onclick="showPlace()">
+🌻 Something Else
+</button>
+
+<br>
+
+<button class="no" id="noBtn3">
+NO 😏
+</button>
+
+</div>
+
+<!-- PAGE 4 -->
+
+<div class="card" id="page4" style="display:none;">
+
+<h1>🌊 Or Forest? 🌳</h1>
+
+<p>
+Where would you like our date?
+</p>
+
+<button class="yes" onclick="showFinal()">
+🌊 Beach
+</button>
+
+<button class="yes" onclick="showFinal()">
+🌳 Forest
+</button>
+
+<br>
+
+<button class="no" id="noBtn4">
+NO 🤭
+</button>
+
+</div>
+
+<!-- PAGE 5 -->
+
+<div class="card" id="page5" style="display:none;">
+
+<div class="sticker">
+🥰
+</div>
+
+<h1>You Made Me Happy! ❤️</h1>
+
+<p>
+
+Date Confirmed ✅
+
+<br><br>
+
+Chocolate Confirmed ✅
+
+<br><br>
+
+Flowers Confirmed ✅
+
+<br><br>
+
+Adventure Confirmed ✅
+
+<br><br>
+
+I can't wait to see you tomorrow night 🌙✨
+
+</p>
+
+</div>
+
+<script>
+
+function moveButton(btn){
+
+let x = Math.random()*300 - 150;
+let y = Math.random()*200 - 100;
+
+btn.style.transform =
+`translate(${x}px, ${y}px)`;
+
+}
+
+["noBtn1","noBtn2","noBtn3","noBtn4"].forEach(id => {
+
+let btn = document.getElementById(id);
+
+if(btn){
+
+btn.addEventListener("mouseover",function(){
+moveButton(this);
+});
+
+btn.addEventListener("click",function(){
+moveButton(this);
+});
+
+}
+
+});
+
+function showChocolate(){
+document.getElementById("page1").style.display="none";
+document.getElementById("page2").style.display="block";
+}
+
+function showFlowers(){
+document.getElementById("page2").style.display="none";
+document.getElementById("page3").style.display="block";
+}
+
+function showPlace(){
+document.getElementById("page3").style.display="none";
+document.getElementById("page4").style.display="block";
+}
+
+function showFinal(){
+document.getElementById("page4").style.display="none";
+document.getElementById("page5").style.display="block";
+}
+
+</script>
+
+</body>
+</html>
